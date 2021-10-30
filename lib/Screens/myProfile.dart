@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/External_Widgets/allGlobalWidgets.dart';
 import 'package:my_portfolio/External_Widgets/navDrawer.dart';
 import 'package:my_portfolio/Services/colors.dart';
-
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_portfolio/Services/customTextStyles.dart';
 
@@ -40,7 +40,7 @@ class MyProfile extends StatelessWidget {
                               flutterAppDeveloperText(),
                               mobileNumberText(),
                               Spacer(),
-                              twoIconButtons(),
+                              // twoIconButtons(),
                             ],
                           ),
                         ),
@@ -130,7 +130,12 @@ class MyProfile extends StatelessWidget {
                 top: 115.h,
                 left: 120.w,
                 right: 120.w,
-                child: myPicAvatar(),
+                child: Hero(
+                  tag: "myPic",
+                  child: myPicAvatar(55.r, () {
+                    Navigator.pushNamed(context, "/myphotosgallary");
+                  }),
+                ),
               ),
             ],
           ),
@@ -145,39 +150,13 @@ class MyProfile extends StatelessWidget {
     );
   }
 
-  Widget myPicAvatar() {
-    return Container(
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        boxShadow: [
-          BoxShadow(
-            blurRadius: 4,
-            color: Colors.blueGrey,
-            offset: Offset(1, 1),
-            spreadRadius: 1,
-          )
-        ],
-      ),
-      child: CircleAvatar(
-        radius: 55.r,
-        // backgroundColor: skyBlue,
-        child: CircleAvatar(
-          radius: 55.r,
-          backgroundImage:
-              AssetImage('assets/images/myPic_Transparent_Background.png'),
-        ),
-      ),
-    );
-  }
-
   Widget cardItem(
       {required String text,
       required String imageLink,
       required VoidCallback ontap}) {
     return Expanded(
       child: InkWell(
-        //TODO: try to fix the navigator because it is not working
-        onTap: () => ontap,
+        onTap: ontap,
         child: Container(
             alignment: Alignment.center,
             decoration: BoxDecoration(
@@ -209,7 +188,7 @@ class MyProfile extends StatelessWidget {
                 ),
                 Text(
                   text,
-                  style: smallText,
+                  style: mediumText,
                 ),
               ],
             )),
@@ -248,9 +227,12 @@ class MyProfile extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(
-            "ABDUL SALAM",
-            style: largeTextNunitoFont,
+          Hero(
+            tag: "myNameHero",
+            child: Text(
+              "ABDUL SALAM",
+              style: mediumTextNunitoFont,
+            ),
           ),
           Row(
             children: [

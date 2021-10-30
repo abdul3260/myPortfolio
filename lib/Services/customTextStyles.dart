@@ -9,11 +9,17 @@ final largeTextManjariFont = TextStyle(
   color: skyBlue,
 );
 
+final mediumTextNunitoFont = TextStyle(
+  fontFamily: "roboto",
+  fontSize: 20.sp,
+  fontWeight: FontWeight.bold,
+  color: mediumYellow,
+);
 final largeTextNunitoFont = TextStyle(
   fontFamily: "roboto",
   fontSize: 20.sp,
   fontWeight: FontWeight.bold,
-  color: skyBlue,
+  color: mediumYellow,
 );
 
 final largeTextSerifTextFont = TextStyle(
@@ -43,10 +49,21 @@ final normalText = TextStyle(
 );
 
 final smallText = TextStyle(
-  fontSize: 12.sp,
+  fontSize: 11.sp,
+  fontFamily: "nunito",
+  color: Colors.white,
+);
+
+final mediumText = TextStyle(
+  fontSize: 13.sp,
+  fontFamily: "nunito",
   color: Colors.white,
 );
 final smallTextColored = TextStyle(
   fontSize: 12.sp,
   color: skyBlue,
 );
+
+TextStyle textStyle(String? fontfamily, double fontsize, Color? color) {
+  return TextStyle(fontFamily: fontfamily, fontSize: fontsize, color: color);
+}

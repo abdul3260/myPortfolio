@@ -6,4 +6,5 @@ const Color black = Color(0xff1A1A1C);
 const Color skyBlue = Color(0xff67FCF2);
 const Color lightBlack = Color(0xff202833);
 const Color maroon = Color(0xff5D001D);
-
+const Color lightYellow = Color(0xfffdfd96);
+const Color mediumYellow = Color(0xfffbec5d);
