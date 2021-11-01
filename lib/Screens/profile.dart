@@ -19,30 +19,6 @@ class _ProfileState extends State<Profile> {
   bool findMeIndex = false;
   bool educationIndex = false;
 
-  itemSelected(myselectedIndex) {
-    if (myselectedIndex == 0) {
-      certificateIndex = false;
-      findMeIndex = false;
-      educationIndex = false;
-      profileIndex = true;
-    } else if (myselectedIndex == 1) {
-      certificateIndex = true;
-      findMeIndex = false;
-      educationIndex = false;
-      profileIndex = false;
-    } else if (myselectedIndex == 2) {
-      certificateIndex = false;
-      findMeIndex = true;
-      educationIndex = false;
-      profileIndex = false;
-    } else if (myselectedIndex == 3) {
-      certificateIndex = false;
-      findMeIndex = false;
-      educationIndex = true;
-      profileIndex = false;
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -91,7 +67,6 @@ class _ProfileState extends State<Profile> {
                             setState(() {
                               index = 0;
                               selectedItem = "Profile";
-                              itemSelected(0);
                             });
                           }, "Profile", Icons.person),
                           SizedBox(
@@ -101,7 +76,6 @@ class _ProfileState extends State<Profile> {
                             setState(() {
                               index = 1;
                               selectedItem = "Certificate";
-                              itemSelected(1);
                             });
                           }, "Certificates", Icons.verified_user),
                           SizedBox(
@@ -111,7 +85,6 @@ class _ProfileState extends State<Profile> {
                             setState(() {
                               index = 2;
                               selectedItem = "Find me";
-                              itemSelected(2);
                             });
                           }, "Find me", Icons.public),
                           SizedBox(
@@ -121,7 +94,6 @@ class _ProfileState extends State<Profile> {
                             setState(() {
                               index = 3;
                               selectedItem = "Education";
-                              itemSelected(3);
                             });
                           }, "Education", Icons.school),
                         ],
@@ -178,13 +150,13 @@ class _ProfileState extends State<Profile> {
           padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 15.h),
           alignment: Alignment.center,
           decoration: BoxDecoration(
-            color: lightBlack,
+            color: index == currentIndex ? Colors.black : lightBlack,
             boxShadow: [
               BoxShadow(
                 blurRadius: 2,
-                color: Colors.black,
+                color: index == currentIndex ? Colors.green : Colors.black,
                 offset: Offset(1, 1),
-                spreadRadius: 2,
+                spreadRadius: index == currentIndex ? 1 : 2,
               )
             ],
             borderRadius: BorderRadius.circular(30.r),
@@ -209,14 +181,15 @@ class _ProfileState extends State<Profile> {
                 alignment: Alignment.center,
                 child: Icon(
                   myIcon,
-                  color: Colors.green,
+                  color: index == currentIndex ? Colors.green : lightYellow,
                   size: 26.r,
                 ),
               ),
               horizontalLine(50),
               Text(
                 titleText,
-                style: textStyle("nunito", 11.sp, Colors.white),
+                style: textStyle("nunito", 11.sp,
+                    index == currentIndex ? Colors.green : lightYellow),
               ),
             ],
           ),
