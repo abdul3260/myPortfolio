@@ -41,7 +41,7 @@ Widget horizontalLine(double mywidth) {
   );
 }
 
-Widget myPicAvatar(double radiuss, VoidCallback ontap) {
+Widget myPicAvatar({required double radiuss, VoidCallback? ontap}) {
   return Container(
     decoration: BoxDecoration(
       shape: BoxShape.circle,

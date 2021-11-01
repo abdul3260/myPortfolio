@@ -14,6 +14,35 @@ class Profile extends StatefulWidget {
 class _ProfileState extends State<Profile> {
   int index = 0;
   String selectedItem = "Profile";
+  bool profileIndex = false;
+  bool certificateIndex = false;
+  bool findMeIndex = false;
+  bool educationIndex = false;
+
+  itemSelected(myselectedIndex) {
+    if (myselectedIndex == 0) {
+      certificateIndex = false;
+      findMeIndex = false;
+      educationIndex = false;
+      profileIndex = true;
+    } else if (myselectedIndex == 1) {
+      certificateIndex = true;
+      findMeIndex = false;
+      educationIndex = false;
+      profileIndex = false;
+    } else if (myselectedIndex == 2) {
+      certificateIndex = false;
+      findMeIndex = true;
+      educationIndex = false;
+      profileIndex = false;
+    } else if (myselectedIndex == 3) {
+      certificateIndex = false;
+      findMeIndex = false;
+      educationIndex = true;
+      profileIndex = false;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,7 +70,7 @@ class _ProfileState extends State<Profile> {
                         ),
                         Hero(
                           tag: "myPic",
-                          child: myPicAvatar(20.r, () {}),
+                          child: myPicAvatar(radiuss: 20.r),
                         ),
                       ],
                     ),
@@ -58,37 +87,41 @@ class _ProfileState extends State<Profile> {
                       // color: lightYellow,
                       child: Row(
                         children: [
-                          topCardItem(() {
+                          topCardItem(0, () {
                             setState(() {
                               index = 0;
                               selectedItem = "Profile";
+                              itemSelected(0);
                             });
                           }, "Profile", Icons.person),
                           SizedBox(
                             width: 14.w,
                           ),
-                          topCardItem(() {
+                          topCardItem(1, () {
                             setState(() {
                               index = 1;
                               selectedItem = "Certificate";
+                              itemSelected(1);
                             });
                           }, "Certificates", Icons.verified_user),
                           SizedBox(
                             width: 14.w,
                           ),
-                          topCardItem(() {
+                          topCardItem(2, () {
                             setState(() {
                               index = 2;
                               selectedItem = "Find me";
+                              itemSelected(2);
                             });
                           }, "Find me", Icons.public),
                           SizedBox(
                             width: 14.w,
                           ),
-                          topCardItem(() {
+                          topCardItem(3, () {
                             setState(() {
                               index = 3;
                               selectedItem = "Education";
+                              itemSelected(3);
                             });
                           }, "Education", Icons.school),
                         ],
@@ -134,7 +167,8 @@ class _ProfileState extends State<Profile> {
     );
   }
 
-  Widget topCardItem(VoidCallback ontapp, String titleText, IconData myIcon) {
+  Widget topCardItem(int currentIndex, VoidCallback ontapp, String titleText,
+      IconData myIcon) {
     return Expanded(
       child: InkWell(
         onTap: () {

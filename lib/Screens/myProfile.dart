@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/External_Widgets/allGlobalWidgets.dart';
 import 'package:my_portfolio/External_Widgets/navDrawer.dart';
+import 'package:my_portfolio/Screens/imagesGallery.dart';
 import 'package:my_portfolio/Services/colors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_portfolio/Services/customTextStyles.dart';
@@ -130,11 +131,17 @@ class MyProfile extends StatelessWidget {
                 top: 115.h,
                 left: 120.w,
                 right: 120.w,
-                child: Hero(
-                  tag: "myPic",
-                  child: myPicAvatar(55.r, () {
-                    Navigator.pushNamed(context, "/myphotosgallary");
-                  }),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        (MaterialPageRoute(
+                            builder: (context) => ImagesGallery())));
+                  },
+                  child: Hero(
+                    tag: "myPic",
+                    child: myPicAvatar(radiuss: 55.r),
+                  ),
                 ),
               ),
             ],

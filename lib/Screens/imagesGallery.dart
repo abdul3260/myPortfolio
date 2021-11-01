@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/External_Widgets/lists.dart';
+import 'package:my_portfolio/Screens/fullScreenImage.dart';
 import 'package:my_portfolio/Services/colors.dart';
 import 'package:my_portfolio/External_Widgets/allGlobalWidgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -27,7 +28,7 @@ class ImagesGallery extends StatelessWidget {
                   ),
                   Hero(
                     tag: "myPic",
-                    child: myPicAvatar(20.r, () {}),
+                    child: myPicAvatar(radiuss: 20.r),
                   ),
                 ],
               ),
@@ -48,7 +49,18 @@ class ImagesGallery extends StatelessWidget {
                         mainAxisSpacing: 4.h,
                       ),
                       itemBuilder: (context, index) {
-                        return images[index];
+                        return InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => FullScreenImage(
+                                    image: images[index],
+                                  ),
+                                ),
+                              );
+                            },
+                            child: images[index]);
                       }),
                 ),
               ),

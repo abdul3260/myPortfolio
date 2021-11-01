@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_portfolio/Screens/experiance.dart';
+import 'package:my_portfolio/Screens/fullScreenImage.dart';
 import 'package:my_portfolio/Screens/profile.dart';
 import 'package:my_portfolio/Screens/socialMedia.dart';
-import 'Screens/Slides/imagesGallery.dart';
+import 'Screens/imagesGallery.dart';
 import 'Screens/myProfile.dart';
 import 'Screens/projects.dart';
 
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
           "/socialMedia": (context) => SocialMedia(),
           "/experiance": (context) => Experiance(),
           "/myphotosgallary": (context) => ImagesGallery(),
+          "/fullScreenImage": (context) => FullScreenImage(),
         },
         debugShowCheckedModeBanner: false,
         title: 'My PortFolio',

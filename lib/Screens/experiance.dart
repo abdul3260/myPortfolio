@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_portfolio/External_Widgets/allGlobalWidgets.dart';
 import 'package:my_portfolio/External_Widgets/lists.dart';
@@ -28,7 +27,7 @@ class Experiance extends StatelessWidget {
                   ),
                   Hero(
                     tag: "myPic",
-                    child: myPicAvatar(20.r, () {}),
+                    child: myPicAvatar(radiuss: 20.r),
                   ),
                 ],
               ),
@@ -78,9 +77,12 @@ class Experiance extends StatelessWidget {
                       return Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            value.toString(),
-                            style: textStyle("nunito", 11.sp, Colors.white),
+                          Padding(
+                            padding: EdgeInsets.only(left: 4.w),
+                            child: Text(
+                              value.toString(),
+                              style: textStyle("nunito", 11.sp, Colors.white),
+                            ),
                           ),
                           SizedBox(
                             height: 3.h,

@@ -6,12 +6,14 @@ import 'package:my_portfolio/Services/customTextStyles.dart';
 
 final experianceItems = [
   experianceItem(),
+  experianceItem(),
+  experianceItem(),
 ];
 
 Widget experianceItem() {
   return Container(
     padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
-    margin: EdgeInsets.only(bottom: 10.h),
+    margin: EdgeInsets.only(bottom: 10.h, left: 4.w, right: 4.w),
     // height: 200.h,
     width: double.infinity,
     decoration: BoxDecoration(
@@ -51,15 +53,27 @@ Widget experianceItem() {
 
 final images = [
   Image.asset("assets/images/facebook.png"),
+  Image.asset("assets/images/whatsapp.png"),
+  Image.asset("assets/images/twitter.png"),
+  Image.asset("assets/images/linkedin.png"),
+  Image.asset("assets/images/man.png"),
+  Image.asset("assets/images/email.png"),
+  Image.asset("assets/images/github.png"),
+  Image.asset("assets/images/hangout.png"),
+  Image.asset("assets/images/idea.png"),
+  Image.asset("assets/images/idcard.png"),
+  Image.asset("assets/images/instagram.png"),
+  Image.asset("assets/images/increase.png"),
   Image.asset("assets/images/facebook.png"),
-  Image.asset("assets/images/facebook.png"),
-  Image.asset("assets/images/facebook.png"),
-  Image.asset("assets/images/facebook.png"),
-  Image.asset("assets/images/facebook.png"),
-  Image.asset("assets/images/facebook.png"),
-  Image.asset("assets/images/facebook.png"),
-  Image.asset("assets/images/facebook.png"),
-  Image.asset("assets/images/facebook.png"),
-  Image.asset("assets/images/facebook.png"),
-  Image.asset("assets/images/facebook.png"),
+  Image.asset("assets/images/whatsapp.png"),
+  Image.asset("assets/images/twitter.png"),
+  Image.asset("assets/images/linkedin.png"),
+  Image.asset("assets/images/man.png"),
+  Image.asset("assets/images/email.png"),
+  Image.asset("assets/images/github.png"),
+  Image.asset("assets/images/hangout.png"),
+  Image.asset("assets/images/idea.png"),
+  Image.asset("assets/images/idcard.png"),
+  Image.asset("assets/images/instagram.png"),
+  Image.asset("assets/images/increase.png"),
 ];

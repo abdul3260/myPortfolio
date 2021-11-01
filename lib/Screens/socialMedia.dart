@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/External_Widgets/allGlobalWidgets.dart';
 import 'package:my_portfolio/Services/colors.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -14,13 +15,32 @@ class SocialMedia extends StatelessWidget {
       body: SafeArea(
         child: Container(
           padding: EdgeInsets.symmetric(vertical: 15.h, horizontal: 15.w),
-          child: GridView(
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              crossAxisSpacing: 10.w,
-              mainAxisSpacing: 10.h,
-            ),
-            children: [],
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Text(
+                    "ABDUL SALAM",
+                    style: textStyle("roboto", 22.sp, mediumYellow),
+                  ),
+                  Hero(
+                    tag: "myPic",
+                    child: myPicAvatar(radiuss: 20.r),
+                  ),
+                ],
+              ),
+              Text(
+                "Flutter Developer",
+                style: textStyle("nunito", 11.sp, Colors.white),
+              ),
+              SizedBox(
+                height: 20.h,
+              ),
+              Image.asset("assets/images/socialMediaPngImage.png"),
+            ],
           ),
         ),
       ),
