@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/Services/colors.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class FullScreenImage extends StatelessWidget {
   Image? image = Image.asset("assets/images/whatsapp.png");

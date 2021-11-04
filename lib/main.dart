@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:my_portfolio/Screens/detailedProject.dart';
 import 'package:my_portfolio/Screens/experiance.dart';
 import 'package:my_portfolio/Screens/fullScreenImage.dart';
 import 'package:my_portfolio/Screens/profile.dart';
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
           "/experiance": (context) => Experiance(),
           "/myphotosgallary": (context) => ImagesGallery(),
           "/fullScreenImage": (context) => FullScreenImage(),
+          "/detialedProject": (context) => DetailedProject(),
         },
         debugShowCheckedModeBanner: false,
         title: 'My PortFolio',
