@@ -122,7 +122,7 @@ class _ProjectsState extends State<Projects> {
                   ),
                   child: ListView(
                     children: [
-                      Center(
+                      Center(     
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
