@@ -349,8 +349,8 @@ Widget educationSlide() {
             height: 6.h,
           ),
           educationSlideItem(
-              degreetitle: "FSc",
-              mainSubjects: "Computer Science 2016 - 2018",
+              degreetitle: "MSc",
+              mainSubjects: "Computer Science 2018 - 2020",
               iconn: "MSc",
               percentage: "89.59%"),
           SizedBox(
@@ -402,7 +402,7 @@ Widget educationSlideItem(
             ),
             child: Text(
               iconn,
-              style: textStyle("roboto", 30.sp, mediumYellow),
+              style: textStyle("roboto", 30.sp, Colors.green),
             ),
           ),
         ),
